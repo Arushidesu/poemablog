@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="h-100">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
 
     <title>Aquele Poema</title>
   </head>   
-  <body>
+  <body class="d-flex flex-column h-100">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -57,141 +57,31 @@
         </nav>
     </header>
 
-    <main>
-        <div class="container">
+    <main class="flex-shrink-0 mb-3">
+        <div role="main" class="container">
             <div class="row">
-                <div class="col-lg-6 col-sm-12 mt-3">
+            {% for post in posts %}            
+                <div class="col-lg-6 col-sm-12 mt-3 mx-auto">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="card-title">O primeiro poema!</h3>
-                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: 05/05/2019 às 14:30</p>
-                            <p class="card-text">
-                                Na minha vida em que tudo acontece... <br>
-                                Mas quanto mais a gente rala, mais a gente cresce!
-                            </p>
+                            <h3 class="card-title">{{ post.title }}</h3>
+                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: {{ post.published_date }}</p>
+                            <p class="card-text">{{ post.text|truncatechars:50}}</p>
                             <a href="#" class="card-link">Ver mais</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-6 col-sm-12 mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">O primeiro poema!</h3>
-                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: 05/05/2019 às 14:30</p>
-                            <p class="card-text">
-                                Aquela flor que eu peguei? <br>
-                                Ela é muito bonita!
-                            </p>
-                            <a href="#" class="card-link">Ver mais</a>
-                        </div>
-                    </div>
+            {% endfor %}
                 </div>
-
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">O primeiro poema!</h3>
-                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: 05/05/2019 às 14:30</p>
-                            <p class="card-text">
-                                Na minha vida em que tudo acontece... <br>
-                                Mas quanto mais a gente rala, mais a gente cresce!
-                            </p>
-                            <a href="#" class="card-link">Ver mais</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-12 mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">O primeiro poema!</h3>
-                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: 05/05/2019 às 14:30</p>
-                            <p class="card-text">
-                                Aquela flor que eu peguei? <br>
-                                Ela é muito bonita!
-                            </p>
-                            <a href="#" class="card-link">Ver mais</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">O primeiro poema!</h3>
-                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: 05/05/2019 às 14:30</p>
-                            <p class="card-text">
-                                Na minha vida em que tudo acontece... <br>
-                                Mas quanto mais a gente rala, mais a gente cresce!
-                            </p>
-                            <a href="#" class="card-link">Ver mais</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-12 mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">O primeiro poema!</h3>
-                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: 05/05/2019 às 14:30</p>
-                            <p class="card-text">
-                                Aquela flor que eu peguei? <br>
-                                Ela é muito bonita!
-                            </p>
-                            <a href="#" class="card-link">Ver mais</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">O primeiro poema!</h3>
-                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: 05/05/2019 às 14:30</p>
-                            <p class="card-text">
-                                Na minha vida em que tudo acontece... <br>
-                                Mas quanto mais a gente rala, mais a gente cresce!
-                            </p>
-                            <a href="#" class="card-link">Ver mais</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-sm-12 mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">O primeiro poema!</h3>
-                            <p class="card-subtitle mt-2 mb-3 text-muted">Publicado em: 05/05/2019 às 14:30</p>
-                            <p class="card-text">
-                                Aquela flor que eu peguei? <br>
-                                Ela é muito bonita!
-                            </p>
-                            <a href="#" class="card-link">Ver mais</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </main>
 
-    <footer class="footer mt-3 py-3 bg-light">
+    <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
             <span class="text-muted">Feito com <i class="fa fa-heart text-danger"></i> por Alcides Dias</span>
         </div>
     </footer>
-
-    <!-- Optional JavaScript -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
