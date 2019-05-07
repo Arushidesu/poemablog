@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
 
-                <a href="{% url 'index' %}" class="navbar-brand h1">Aquele Poema</a>
+                <a href="{% url 'index' %}" class="navbar-brand h1 mt-1">Aquele Poema</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
                     <span class="navbar-toggler-icon"></span>
@@ -39,25 +39,32 @@
 
                     <ul class="navbar-nav ml-auto list-inline">
 
-                        <li class="list-inline-item">
+                        <li class="list-inline-item mt-2">
                             <a href="https://www.facebook.com/Arushidesu11" target="_blank" data-toggle="popover" data-placement="bottom" data-content="Facebook" data-trigger="hover"><i class="fab fa-facebook-f text-light h4 mx-2"></i></a>
                         </li>
 
-                        <li class="list-inline-item">
+                        <li class="list-inline-item mt-2">
                             <a href="https://github.com/Arushidesu" target="_blank" data-toggle="popover" data-placement="bottom" data-content="GitHub" data-trigger="hover"><i class="fab fa-github text-light h4 mx-2"></i></a>
                         </li>
+
+                        <li class="list-inline-item mt-2">
+                                <a href="https://www.linkedin.com/in/alcides-dias-de-souza-filho-84b86116b/" target="_blank" data-toggle="popover" data-placement="bottom" data-content="LinkedIn" data-trigger="hover"><i class="fab fa-linkedin-in text-light h4 mx-2"></i></a>
+                        </li>
+
+                        <form class="form-inline" action="{% url 'busca' %}" method="GET">
+                            <input class="form-control ml-4 mr-3" type="text" placeholder="Buscar..." name="q" value="{{ request.GET.q }}">
+                            <button class="btn btn-outline-light" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="flex-shrink-0 mb-3 h-100">
+    <main class="flex-shrink-0 mb-3">
         <div role="main" class="container">
-            <div class="row">
             {% block content %}
             {% endblock %}
-            </div>
         </div>
     </main>
 
