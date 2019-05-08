@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon-book.ico' %}">
-
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -29,7 +29,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarsite">
 
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav">
 
                         <li class="nav-item">
                             <a href="{% url 'sobre' %}" class="nav-link">Sobre</a>
@@ -37,25 +37,27 @@
 
                     </ul>
 
-                    <ul class="navbar-nav ml-auto list-inline">
+                    <ul class="navbar-nav ml-auto d-flex flex-row">
 
-                        <li class="list-inline-item mt-2">
+                        <li class="mt-3">
                             <a href="https://www.facebook.com/Arushidesu11" target="_blank" data-toggle="popover" data-placement="bottom" data-content="Facebook" data-trigger="hover"><i class="fab fa-facebook-f text-light h4 mx-2"></i></a>
                         </li>
 
-                        <li class="list-inline-item mt-2">
+                        <li class="mt-3">
                             <a href="https://github.com/Arushidesu" target="_blank" data-toggle="popover" data-placement="bottom" data-content="GitHub" data-trigger="hover"><i class="fab fa-github text-light h4 mx-2"></i></a>
                         </li>
 
-                        <li class="list-inline-item mt-2">
+                        <li class="mt-3">
                                 <a href="https://www.linkedin.com/in/alcides-dias-de-souza-filho-84b86116b/" target="_blank" data-toggle="popover" data-placement="bottom" data-content="LinkedIn" data-trigger="hover"><i class="fab fa-linkedin-in text-light h4 mx-2"></i></a>
                         </li>
 
-                        <form class="form-inline" action="{% url 'busca' %}" method="GET">
-                            <input class="form-control ml-4 mr-3" type="text" placeholder="Buscar..." name="q" value="{{ request.GET.q }}">
+                    </ul>
+                    <div class="row">
+                        <form class="form-inline mt-2" action="{% url 'busca' %}" method="GET">
+                            <input class="form-control ml-4 mr-3 col-8" type="text" placeholder="Buscar..." name="q" value="{{ request.GET.q }}">
                             <button class="btn btn-outline-light" type="submit"><i class="fa fa-search"></i></button>
                         </form>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </nav>
